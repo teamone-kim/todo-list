@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo Board</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Todo Board</h1>
+    <div class="user-info" id="user-info" style="display: none">
+      <span class="user-email" id="user-email"></span>
+      <button type="button" class="logout-btn" id="logout-btn">로그아웃</button>
+    </div>
+  </header>
+
+  <section class="auth-screen" id="auth-screen">
+    <div class="auth-card">
+      <h2 class="auth-title">로그인</h2>
+      <p class="auth-message" id="auth-message"></p>
+      <p class="auth-error" id="auth-error"></p>
+
+      <form class="auth-form" id="login-form">
+        <input type="email" name="email" placeholder="이메일" required />
+        <input type="password" name="password" placeholder="비밀번호" required />
+        <button type="submit" class="auth-submit-btn">로그인</button>
+      </form>
+
+      <form class="auth-form" id="signup-form" style="display: none">
+        <input type="email" name="email" placeholder="이메일" required />
+        <input type="password" name="password" placeholder="비밀번호 (6자 이상)" minlength="6" required />
+        <button type="submit" class="auth-submit-btn">회원가입</button>
+      </form>
+
+      <p class="auth-toggle">
+        <a href="#" id="show-signup">계정이 없으신가요? 회원가입</a>
+        <a href="#" id="show-login" style="display: none">이미 계정이 있으신가요? 로그인</a>
+      </p>
+    </div>
+  </section>
+
+  <p class="board-error" id="board-error"></p>
+
+  <main class="board" id="board" style="display: none">
+    <section class="column" data-status="todo">
+      <h2 class="column-title">To Do</h2>
+      <form class="add-form" data-status="todo">
+        <input type="text" class="add-input" placeholder="할 일을 입력하세요" maxlength="200" />
+        <button type="submit" class="add-btn">추가</button>
+      </form>
+      <div class="card-list" data-status="todo"></div>
+    </section>
+
+    <section class="column" data-status="in-progress">
+      <h2 class="column-title">In Progress</h2>
+      <form class="add-form" data-status="in-progress">
+        <input type="text" class="add-input" placeholder="할 일을 입력하세요" maxlength="200" />
+        <button type="submit" class="add-btn">추가</button>
+      </form>
+      <div class="card-list" data-status="in-progress"></div>
+    </section>
+
+    <section class="column" data-status="done">
+      <h2 class="column-title">Done</h2>
+      <form class="add-form" data-status="done">
+        <input type="text" class="add-input" placeholder="할 일을 입력하세요" maxlength="200" />
+        <button type="submit" class="add-btn">추가</button>
+      </form>
+      <div class="card-list" data-status="done"></div>
+    </section>
+  </main>
+
+  <script type="module" src="../js/script.js"></script>
+</body>
+</html>

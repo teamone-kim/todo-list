@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Apple SD Gothic Neo", sans-serif;
+  background: #f2f4f7;
+  color: #1f2937;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem 1rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-email {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.logout-btn {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #f3f4f6;
+}
+
+.auth-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 1rem;
+}
+
+.auth-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth-title {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.auth-form input {
+  padding: 0.6rem 0.7rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.auth-submit-btn {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.auth-submit-btn:hover {
+  background: #1d4ed8;
+}
+
+.auth-error,
+.auth-message {
+  font-size: 0.8rem;
+  margin: 0 0 0.5rem;
+}
+
+.auth-error:empty,
+.auth-message:empty {
+  display: none;
+}
+
+.auth-error {
+  color: #dc2626;
+}
+
+.auth-message {
+  color: #2563eb;
+}
+
+.auth-toggle {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.auth-toggle a {
+  color: #6b7280;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.board-error {
+  color: #dc2626;
+  font-size: 0.85rem;
+  padding: 0 2rem;
+  margin: 0.5rem 0 0;
+}
+
+.board-error:empty {
+  display: none;
+}
+
+.board {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 2rem 2rem;
+  align-items: flex-start;
+}
+
+.column {
+  flex: 1;
+  min-width: 0;
+  background: #e5e7eb;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  transition: background-color 0.15s ease;
+}
+
+.column.drag-over {
+  background: #d1d9e6;
+}
+
+.column-title {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  color: #374151;
+}
+
+.add-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.add-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.add-btn {
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background: #1d4ed8;
+}
+
+.card-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 100px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.7rem 0.8rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: grab;
+}
+
+.card.dragging {
+  opacity: 0.4;
+}
+
+.card-text {
+  word-break: break-word;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.card-delete {
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.card-delete:hover {
+  color: #ef4444;
+}
+
+@media (max-width: 700px) {
+  .board {
+    flex-direction: column;
+  }
+}
